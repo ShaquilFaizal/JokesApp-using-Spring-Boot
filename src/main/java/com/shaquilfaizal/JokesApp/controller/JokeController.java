@@ -10,14 +10,15 @@ import com.shaquilfaizal.JokesApp.services.JokesService;
 @Controller
 public class JokeController {
 
+	@Autowired
 	private JokesService jokeService;
 	
-	@Autowired
+	/*@Autowired
 	public JokeController(JokesService jokeService) {
 		
 		this.jokeService = jokeService;
 	}
-	
+	*/
 	@RequestMapping({"/",""})
 	public String showJoke(Model model){
 		model.addAttribute("joke",jokeService.getJoke());
